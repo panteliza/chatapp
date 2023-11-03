@@ -1,3 +1,4 @@
+import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,13 +10,13 @@ import { Button } from 'react-bootstrap';
 
 function Navigation() {
   const user = useSelector((state) => state.user);
-    const [logoutUser] = useLogoutUserMutation();
-    async function handleLogout(e) {
-        e.preventDefault();
-        await logoutUser(user);
-        // redirect to home page
-        window.location.replace("/");
-    }
+  const [logoutUser] = useLogoutUserMutation();
+  async function handleLogout(e) {
+      e.preventDefault();
+      await logoutUser(user);
+      // redirect to home page
+      window.location.replace("/");
+  }
   return (
     <Navbar bg="light" expand="lg">
     <Container>
